@@ -10,23 +10,32 @@
     <meta name="msapplication-navbutton-color" content="#00ffbf" />
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#00ffbf" />
-    <link
-      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
-      rel="stylesheet"
-    />
+
     <!--build:css css/styles.min.css-->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <!--endbuild-->
-    <link rel="icon" href="images/unnamed.png" type="image/png" />
+    <link rel="icon" href="./images/unnamed.png" type="image/png" />
 
     <title>My Start Page</title>
   </head>
 
   <body>
-    <div class="page-wrapper"></div>
+    <div class="page-wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-2 bg-dark text-light">2</div>
+            <div class="col-5 bg-info">5</div>
+            <div class="col-5 bg-success">5</div>
+          </div>
+        </div>
+      </header>
+      <button class="btn btn-info btn-block">Button</button>
+    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--build:js js/main.min.js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/lazyImg.js"></script>
     <!-- endbuild -->
