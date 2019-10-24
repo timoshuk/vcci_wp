@@ -1,5 +1,12 @@
 .contacts-data {
   a {
     color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:focus,
+    &:hover {
+      color: var(--color-main);
+    }
   }
 }
