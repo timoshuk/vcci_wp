@@ -2,6 +2,8 @@
   font-size: calc(0.5em + 1vw);
   --main-font: Helvetica, Arial, sans-serif;
   --color-main: rgba(241, 64, 75, 1);
+  --color-akcent: rgba(0, 87, 146, 1);
+
   --color-bg: rgba(221, 223, 230, 1);
   --color-light: rgba(244, 245, 249, 1);
   --color-dark: rgba(37, 44, 65, 1);
@@ -55,4 +57,8 @@ body {
 
 .vcci-text-danger {
   color: var(--color-main);
+}
+
+.vcci-text-akcent {
+  color: var(--color-akcent);
 }
