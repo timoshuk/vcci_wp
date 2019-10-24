@@ -1,0 +1,9 @@
+ul.social__list {
+  list-style: none;
+  margin-bottom: 0rem;
+  margin-bottom: 0px;
+
+  li:not(:last-child) {
+    margin-right: 20px;
+  }
+}
