@@ -1,5 +1,5 @@
 :root {
-  font-size: calc(0.5em + 1vw);
+  font-size: calc(0.6em + 1vw);
   --main-font: Helvetica, Arial, sans-serif;
   --color-main: rgba(241, 64, 75, 1);
   --color-akcent: rgba(0, 87, 146, 1);
@@ -7,6 +7,10 @@
   --color-bg: rgba(221, 223, 230, 1);
   --color-light: rgba(244, 245, 249, 1);
   --color-dark: rgba(37, 44, 65, 1);
+
+  @include mq("desktop-wide") {
+    font-size: calc(0.2em + 1vw);
+  }
 }
 
 *,
@@ -29,6 +33,14 @@ body {
   line-height: 1.5;
   max-width: 100vw;
   min-height: 100vh;
+  background-color: #edeff7;
+}
+
+.page-wrapper {
+  max-width: 1300px;
+  @include push--auto;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
 // Custom color

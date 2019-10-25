@@ -1,3 +1,6 @@
+.last-news {
+  background-color: var(--color-bg);
+}
 .last-news__wrap {
   .last-news__item {
     position: relative;
@@ -13,6 +16,7 @@
     text-decoration: none;
     text-align: justify;
     color: var(--color-dark);
+    background-color: #fff;
 
     &:hover,
     &:focus {

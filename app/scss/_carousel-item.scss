@@ -1,6 +1,7 @@
 .carousel-item {
   height: 50vw;
-  max-height: 70vh;
+  height: 70vh;
+  max-height: 550px;
 
   &::after {
     display: block;
