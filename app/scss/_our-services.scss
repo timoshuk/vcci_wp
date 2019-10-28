@@ -1,0 +1,22 @@
+.our-services {
+  .our-services__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+    min-width: 320px;
+    max-width: 360px;
+    margin: 5px;
+    padding: 1em 2em;
+  }
+}
+
+.our-services__logo {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+.our-services__title {
+  font-size: 1.6rem;
+  margin-bottom: 0.5em;
+}
