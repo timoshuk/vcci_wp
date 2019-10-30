@@ -276,4 +276,17 @@ ul.social__list {
     border-color: rgba(241, 64, 75, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(241, 64, 75, 0.7); }
 
+.all-news {
+  min-height: 85vh; }
+
+.all-news__top {
+  padding: 2em;
+  overflow: hidden; }
+  .all-news__top img {
+    display: block;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 10px; }
+
 /*# sourceMappingURL=styles.css.map */

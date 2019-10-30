@@ -1,0 +1,15 @@
+.all-news {
+  min-height: 85vh;
+}
+
+.all-news__top {
+  padding: 2em;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
