@@ -1,15 +1,83 @@
 .all-news {
-  min-height: 85vh;
+  min-height: 90vh;
 }
 
 .all-news__top {
   padding: 2em;
   overflow: hidden;
+  border-bottom: 3px solid rgba(241, 64, 75, 0.7);
 
   img {
     display: block;
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 700;
+  }
+  p {
+    text-align: justify;
+  }
+
+  @include mq("tablet") {
+    display: flex;
+    justify-content: space-around;
+    img {
+      width: 45%;
+      order: 2;
+    }
+
+    .all-news__top-data {
+      width: 45%;
+      order: 1;
+      margin-right: 1em;
+    }
+  }
+}
+
+.all-news__wrap {
+  .all-news__item {
+    min-width: 320px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0px 2px var(--color-akcent);
+    padding-bottom: 2em;
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.7rem;
+      font-weight: 700;
+      padding: 0 1em;
+    }
+    p {
+      text-align: justify;
+      padding: 0 2em;
+    }
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  @include mq("tablet") {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .all-news__item {
+      width: 49%;
+    }
   }
 }
