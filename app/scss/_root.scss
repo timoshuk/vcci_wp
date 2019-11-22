@@ -8,8 +8,8 @@
   --color-light: rgba(244, 245, 249, 1);
   --color-dark: rgba(37, 44, 65, 1);
 
-  @include mq("desktop-wide") {
-    font-size: calc(0.2em + 1vw);
+  @include mq("tablet-wide") {
+    font-size: calc(0.4em + 1vw);
   }
 }
 
