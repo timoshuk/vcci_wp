@@ -355,4 +355,81 @@ ul.social__list {
   line-height: 1.2;
   margin-bottom: 40px; }
 
+/* Comments form */
+#respond {
+  background: transparent;
+  padding: 40px 10px 0 10px; }
+
+#respond #reply-title {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center; }
+
+#respond label {
+  font-weight: 700; }
+
+#respond .comment-form-cookies-consent label {
+  font-size: 0.9rem;
+  font-weight: 400; }
+
+#respond .comment-notes {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6); }
+
+#respond p:not(.comment-notes) {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px; }
+
+#respond p label,
+#respond p input[type="checkbox"] {
+  margin-bottom: 0px; }
+
+/* Highlight active form field */
+#respond input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  padding: 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #dddddd; }
+
+#respond input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  box-shadow: 0 0 5px #dc3545;
+  margin: 5px 1px 3px 0px;
+  border: 2px solid #dc35468f; }
+
+/* Style inner text in fields */
+#author,
+#email,
+#url {
+  color: #1d1d1d;
+  letter-spacing: 0.1em; }
+
+/* Submit button comment form Form */
+#submit {
+  background: linear-gradient(to right, #dc3545 0%, #eb0e24 100%);
+  /* background-color: #dc3545; */
+  border-radius: 28px;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
+  margin-top: 20px; }
+
+#submit:hover {
+  background-color: #dc3545; }
+
+#submit:active {
+  position: relative;
+  top: 1px; }
+
 /*# sourceMappingURL=styles.css.map */
