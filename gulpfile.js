@@ -1,5 +1,6 @@
 var gulp = require("gulp");
-var sass = require("gulp-sass"); //Sass to css
+// var sass = require("gulp-sass"); //Sass to css
+var sass = require("gulp-sass")(require("sass"));
 var useref = require("gulp-useref"); // combine js, css files
 var browserSync = require("browser-sync").create(); //browser-sync reload browser
 var uglify = require("gulp-uglify");
@@ -26,23 +27,23 @@ var paths = {
   scripts: ["app/scripts/**/*.js"],
   image: ["app/images/**/*.+(png|jpg|jpeg|gif|svg|JPG)"],
   fonts: ["app/fonts/**/*"],
-  video: ["app/video/**/*"]
+  video: ["app/video/**/*"],
 };
 
 //Tasks
 
-gulp.task("html", function() {
+gulp.task("html", function () {
   return gulp
     .src(paths.html)
     .pipe(wait(500))
     .pipe(plumber())
     .pipe(
       browserSync.reload({
-        stream: true
+        stream: true,
       })
     );
 }); //Html task
-gulp.task("css", function() {
+gulp.task("css", function () {
   return gulp
     .src(paths.scss) // Gets all files ending with .scss in app/scss
     .pipe(wait(500))
@@ -55,30 +56,30 @@ gulp.task("css", function() {
     .pipe(notify("Done!"))
     .pipe(
       browserSync.reload({
-        stream: true
+        stream: true,
       })
     );
 }); //Sass to css task
 
-gulp.task("js", function() {
+gulp.task("js", function () {
   return gulp
     .src(paths.scripts)
     .pipe(wait(500))
     .pipe(plumber())
     .pipe(
       babel({
-        presets: ["@babel/env"]
+        presets: ["@babel/env"],
       })
     )
     .pipe(gulp.dest("app/js"))
     .pipe(
       browserSync.reload({
-        stream: true
+        stream: true,
       })
     );
 });
 
-gulp.task("useref", function() {
+gulp.task("useref", function () {
   return (
     gulp
       .src(paths.html)
@@ -90,7 +91,7 @@ gulp.task("useref", function() {
   );
 });
 
-gulp.task("images", function() {
+gulp.task("images", function () {
   return (
     gulp
       .src(paths.image)
@@ -99,11 +100,11 @@ gulp.task("images", function() {
         cache(
           imagemin([
             imagemin.gifsicle({ interlaced: true }),
-            imagemin.jpegtran({ progressive: true }),
+            imagemin.mozjpeg({ progressive: true }),
             imagemin.optipng({ optimizationLevel: 5 }),
             imagemin.svgo({
-              plugins: [{ removeViewBox: true }, { cleanupIDs: false }]
-            })
+              plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+            }),
           ])
         )
       )
@@ -111,58 +112,58 @@ gulp.task("images", function() {
   );
 }); // min image
 
-gulp.task("webp", function() {
+gulp.task("webp", function () {
   return gulp
     .src("app/images/**/*.{png,jpg}")
     .pipe(
       webp({
-        quality: 90
+        quality: 90,
       })
     )
     .pipe(gulp.dest("dist/images"));
 }); // Create WebP image
 
-gulp.task("sprite", function() {
+gulp.task("sprite", function () {
   return gulp
     .src("app/images/icon-*.svg")
     .pipe(
       svgstore({
-        inlineSvg: true
+        inlineSvg: true,
       })
     )
     .pipe(rename("sprite.svg"))
     .pipe(gulp.dest("dist/images"));
 });
 
-gulp.task("fonts", function() {
+gulp.task("fonts", function () {
   return gulp.src(paths.fonts).pipe(gulp.dest("dist/fonts"));
 }); // Copy fonts to folder dist
 
-gulp.task("video", function() {
+gulp.task("video", function () {
   return gulp.src(paths.video).pipe(gulp.dest("dist/video"));
 }); // Copy fonts to folder dist
 
-gulp.task("clean:dist", function() {
+gulp.task("clean:dist", function () {
   return del("dist");
 }); // clear dist
 
-gulp.task("browserSync", function() {
+gulp.task("browserSync", function () {
   browserSync.init({
     server: {
-      baseDir: "app"
+      baseDir: "app",
     },
     port: 8080,
     open: true,
-    notify: false
+    notify: false,
   });
 }); //browserSync
 
-gulp.task("minhtml", function() {
+gulp.task("minhtml", function () {
   return gulp
     .src("dist/**/*.html")
     .pipe(
       htmlmin({
-        collapseWhitespace: true
+        collapseWhitespace: true,
       })
     )
     .pipe(gulp.dest("dist"));
@@ -181,7 +182,7 @@ gulp.task(
   )
 ); //build
 
-gulp.task("watch", function() {
+gulp.task("watch", function () {
   gulp.watch(paths.scss, gulp.parallel("css"));
   gulp.watch(paths.html, gulp.parallel("html"));
   gulp.watch(paths.scripts, gulp.parallel("js"));
